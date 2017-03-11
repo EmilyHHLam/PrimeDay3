@@ -1,50 +1,35 @@
+var count = 0;
+$(document).ready(function(){
 
-var onReady = function() {
-
-    redClick();
-    blueClick();
-    greenClick();
-    yellowClick();
-
-
-};
-var redCount =0;
-var blueCount = 0;
-var greenCount = 0;
-var yellowCount = 0;
-function redClick() {
-  $('.buttonClick').on('click', '#red', function(){
-    console.log('red');
-     $('.boxContainer').append('<div class="redBox"></div>');
-      redCount++;
-      $('.redNumb').text('Red count: ' +redCount);
+  //function boxRemove() {
+    $(".containers").on("click", ".box", function() {
+    ///pull the element value of color: data-color = 'red'
+    var color = $(this).data('color');
+    console.log('color' + color);
+    var count = $('#' + color + 'Count').text();
+    count--;
+    $("#" + color + "Count").text(count);
+    $(this).remove();
   });
-}
-function blueClick() {
-  $('.buttonClick').on('click', '#blue', function(){
-    console.log('blue');
-     $('.boxContainer').append('<div class="blueBox"></div>');
-      blueCount++;
-      $('.blueNumb').text('Blue count: ' +blueCount);
-  });
-}
-function greenClick() {
-  $('.buttonClick').on('click', '#green', function(){
-     $('.boxContainer').append('<div class="greenBox"></div>');
-      greenCount++;
-      $('.greenNumb').text('Green count: ' +greenCount);
-  });
-}
-function yellowClick() {
-  $('.buttonClick').on('click', '#yellow', function(){
-     $('.boxContainer').append('<div class="yellowBox"></div>');
-      yellowCount++;
-      $('.yellowNumb').text('Yellow count: ' +yellowCount);
-  });
-}
+//  }
+
+  $(".containers").append("<button data-color='red' >Red</button>");
+  $(".containers").append("<button data-color='blue' >Blue</button>");
+  $(".containers").append("<button data-color='green' >Green</button>");
+  $(".containers").append("<button data-color='yellow' >Yellow</button>");
+  $(".containers").append("<p></p>");
+
+  $(".containers").on("click", "button", function() {
+    var color = $(this).data('color');
+
+    //console.log($(this).data('color'));
+    $(".containers").append("<div data-color='" + color + "' class='box " + color + "' > </div>");
+    //var currentCount = parseInt($('#' + color + 'Count').text());
+    var count = $('#' + color + 'Count').text();
+    count++;
+    $("#" + color + "Count").text(count);
 
 
+    });
 
-
-
-$(document).ready(onReady);
+});
