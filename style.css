@@ -1,7 +1,7 @@
 body {
   padding: 0;
-  margin: 0;
-
+  margin: 5;
+  font-family: sans-serif;
 
 }
 .containers{
@@ -9,38 +9,35 @@ body {
   padding: 10px;
 
 }
-.redNumb, .blueNumb, .greenNumb, .yellowNumb{
-  font-family: sans-serif;
+
+.colorCount{
+
   font-size: 12px;
   padding: 10px;
+
 }
 
-.redBox {
+.box {
   float: left;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.red {
   background-color: red;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+
 
 }
-.blueBox {
-  float: left;
+.blue {
   background-color: blue;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+
 }
-.yellowBox {
-  float: left;
+.yellow {
   background-color: yellow;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+
 }
-.greenBox {
-  float: left;
+.green {
   background-color: green;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+
 }
